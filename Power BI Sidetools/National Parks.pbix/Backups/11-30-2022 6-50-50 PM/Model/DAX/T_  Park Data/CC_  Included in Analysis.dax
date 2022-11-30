@@ -1,0 +1,1 @@
+IF(AND('Park Data'[Earliest Year with Data] <= 'Park Data'[First Year as Park] - 3, 'Park Data'[Latest Year with Data] >= 'Park Data'[First Year as Park] + 3), TRUE, FALSE)

@@ -1,0 +1,1 @@
+Calendar(Date(Year(MIN('Park Visits'[Date])), 1, 1), Date(Year(MAX('Park Visits'[Date])), 12, 31))

@@ -1,0 +1,1 @@
+YEAR(CALCULATE(MIN('Park Visits'[Date]), FILTER('Park Visits', 'Park Visits'[Park Unit] = 'Park Data'[Park Unit]), 'Park Visits'[Visits] > 0))

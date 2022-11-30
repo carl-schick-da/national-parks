@@ -1,0 +1,1 @@
+Calendar(Date(Year(MIN('COVID Range'[COVID Dates])), 1, 1), Date(Year(MAX('COVID Range'[COVID Dates])), 12, 31))

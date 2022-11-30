@@ -1,5 +1,4 @@
 let
-    Source = (image_lookup as text) => let
     Source = Web.BrowserContents("https://en.wikipedia.org/w/api.php?action=query&titles=" & image_lookup & "&prop=imageinfo&iiprop=url"),
     #"Extracted Table From Html" = Html.Table(Source, {{"Column1", ".p + .s2"}, {"Column2", ".o + *"}, {"Column3", ".s2 + .p"}}, [RowSelector=".p + .s2"]),
     #"Changed Type" = Table.TransformColumnTypes(#"Extracted Table From Html",{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}}),
@@ -9,5 +8,3 @@ let
     #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns","""","",Replacer.ReplaceText,{"Image Link"})
 in
     #"Replaced Value"
-in
-    Source
