@@ -1,0 +1,1 @@
+SUMX(FILTER(FILTER(FILTER('Park Visits', 'Park Visits'[Park Unit] = 'Park Data'[Park Unit]), YEAR('Park Visits'[Date]) = 'Park Data'[First Year as Park] + 2), 'Park Data'[Included in Analysis] = TRUE), 'Park Visits'[Visits])
