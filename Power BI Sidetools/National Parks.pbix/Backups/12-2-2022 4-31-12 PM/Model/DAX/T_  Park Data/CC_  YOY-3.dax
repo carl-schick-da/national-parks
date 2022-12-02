@@ -1,0 +1,1 @@
+IF('Park Data'[Included in Analysis] = True, ('Park Data'[FY-2 Data] - 'Park Data'[FY-3 Data]) / 'Park Data'[FY-3 Data])
