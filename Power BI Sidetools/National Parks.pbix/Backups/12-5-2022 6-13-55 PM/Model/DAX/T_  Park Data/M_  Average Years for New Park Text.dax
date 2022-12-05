@@ -1,0 +1,1 @@
+"Since 1900, the National Park Service has designated a new National Park once every " & ROUND([Average Years for New Park],2) & " years."

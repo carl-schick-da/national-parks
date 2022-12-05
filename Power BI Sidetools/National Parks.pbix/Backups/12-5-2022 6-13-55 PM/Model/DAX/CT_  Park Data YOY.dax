@@ -1,0 +1,8 @@
+UNION(
+                    SELECTCOLUMNS(FILTER('Park Data', 'Park Data'[Included in Analysis] = True), "Park Unit", 'Park Data'[Park Unit], "Period", "-3", "Order", 1, "YOY Change", 'Park Data'[YOY-3]),
+                    SELECTCOLUMNS(FILTER('Park Data', 'Park Data'[Included in Analysis] = True), "Park Unit", 'Park Data'[Park Unit], "Period", "-2", "Order", 2, "YOY Change", 'Park Data'[YOY-2]),
+                    SELECTCOLUMNS(FILTER('Park Data', 'Park Data'[Included in Analysis] = True), "Park Unit", 'Park Data'[Park Unit], "Period", "-1", "Order", 3, "YOY Change", 'Park Data'[YOY-1]),
+                    SELECTCOLUMNS(FILTER('Park Data', 'Park Data'[Included in Analysis] = True), "Park Unit", 'Park Data'[Park Unit], "Period", "+1", "Order", 4, "YOY Change", 'Park Data'[YOY+1]),
+                    SELECTCOLUMNS(FILTER('Park Data', 'Park Data'[Included in Analysis] = True), "Park Unit", 'Park Data'[Park Unit], "Period", "+2", "Order", 5, "YOY Change", 'Park Data'[YOY+2]),
+                    SELECTCOLUMNS(FILTER('Park Data', 'Park Data'[Included in Analysis] = True), "Park Unit", 'Park Data'[Park Unit], "Period", "+3", "Order", 6, "YOY Change", 'Park Data'[YOY+3])
+                    )

@@ -1,0 +1,5 @@
+
+CALCULATE (
+    AVERAGE ( 'Park Data YOY'[YOY Change] ),
+    'Park Data YOY'[Order] <= 3
+)
