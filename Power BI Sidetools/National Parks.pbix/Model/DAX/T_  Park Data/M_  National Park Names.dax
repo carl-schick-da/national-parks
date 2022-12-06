@@ -1,29 +1,27 @@
 
-VAR __DISTINCT_VALUES_COUNT = DISTINCTCOUNT('Park Data'[Park Name])
+VAR __DISTINCT_VALUES_COUNT =
+    DISTINCTCOUNT ( 'Park Data'[Park Name] )
 VAR __MAX_VALUES_TO_SHOW = 15
 RETURN
-	IF(
-		__DISTINCT_VALUES_COUNT > __MAX_VALUES_TO_SHOW,
-		CONCATENATE(
-			CONCATENATEX(
-				TOPN(
-					__MAX_VALUES_TO_SHOW,
-					VALUES('Park Data'[Park Name]),
-					'Park Data'[Park Name],
-					ASC
-				),
-				'Park Data'[Park Name],
-				", ",
-				'Park Data'[Park Name],
-				ASC
-			),
-			", etc."
-		),
-		CONCATENATEX(
-			VALUES('Park Data'[Park Name]),
-			'Park Data'[Park Name],
-			", ",
-			'Park Data'[Park Name],
-			ASC
-		)
-	)
+    IF (
+        __DISTINCT_VALUES_COUNT > __MAX_VALUES_TO_SHOW,
+        CONCATENATE (
+            CONCATENATEX (
+                TOPN (
+                    __MAX_VALUES_TO_SHOW,
+                    VALUES ( 'Park Data'[Park Name] ),
+                    'Park Data'[Park Name], ASC
+                ),
+                'Park Data'[Park Name],
+                ", ",
+                'Park Data'[Park Name], ASC
+            ),
+            ", etc."
+        ),
+        CONCATENATEX (
+            VALUES ( 'Park Data'[Park Name] ),
+            'Park Data'[Park Name],
+            ", ",
+            'Park Data'[Park Name], ASC
+        )
+    )

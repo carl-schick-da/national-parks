@@ -1,4 +1,11 @@
 
-    VAR T1 = SUMMARIZE('Park Data', 'Park Data'[Date Established], "Count", COUNTROWS('Park Data'))
-    VAR MostRepeated = MAXX(T1, [Count])
-    RETURN MAXX(T1, IF( [Count] = MostRepeated, 'Park Data'[Date Established]))
+VAR T1 =
+    SUMMARIZE (
+        'Park Data',
+        'Park Data'[Date Established],
+        "Count", COUNTROWS ( 'Park Data' )
+    )
+VAR MostRepeated =
+    MAXX ( T1, [Count] )
+RETURN
+    MAXX ( T1, IF ( [Count] = MostRepeated, 'Park Data'[Date Established] ) )

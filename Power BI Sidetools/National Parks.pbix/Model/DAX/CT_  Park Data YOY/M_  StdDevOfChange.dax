@@ -1,0 +1,9 @@
+
+VAR T1 =
+    SUMMARIZE (
+        'Park Data YOY',
+        'Park Data YOY'[Park Unit],
+        "ChangeIn3YrAvg", [Change in 3 Yr Avg]
+    )
+RETURN
+    STDEVX.P ( T1, [ChangeIn3YrAvg] )
