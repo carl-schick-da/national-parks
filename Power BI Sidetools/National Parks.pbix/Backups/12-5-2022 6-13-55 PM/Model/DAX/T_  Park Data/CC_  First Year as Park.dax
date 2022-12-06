@@ -1,1 +1,0 @@
-IF(MONTH('Park Data'[Date Established]) <= 6, YEAR('Park Data'[Date Established]), YEAR('Park Data'[Date Established] + 1))

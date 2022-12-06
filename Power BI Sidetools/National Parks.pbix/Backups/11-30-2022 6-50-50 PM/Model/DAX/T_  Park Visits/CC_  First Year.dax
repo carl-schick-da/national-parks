@@ -1,1 +1,0 @@
-IF(YEAR('Park Visits'[Date]) = LOOKUPVALUE('Park Data'[First Year as Park], 'Park Data'[Park Unit], 'Park Visits'[Park Unit]), 1, 0)

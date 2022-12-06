@@ -1,5 +1,0 @@
-
-(
-    AVERAGE ( 'Park Data'[YOY+1] ) + AVERAGE ( 'Park Data'[YOY+2] )
-        + AVERAGE ( 'Park Data'[YOY+3] )
-) / 3

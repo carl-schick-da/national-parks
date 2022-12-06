@@ -1,1 +1,0 @@
-CALCULATE(count('Park Data'[Park Unit]) / (year(TODAY()) - 1900), 'Park Data'[Year Established] >= 1900)
