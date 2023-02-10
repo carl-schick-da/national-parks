@@ -50,7 +50,7 @@ target_table_min = 10
 
 # The first call will get the SSRS wrapper
 park_visits_request = park_visits_domain + park_visits_url + park_visits_qs + park_unit
-r = http.get(park_visits_request, headers=headers, timeout=5)
+r = http.get(park_visits_request, headers=headers, timeout=5, verify=False)
 
 # Use Beautiful Soup to extract the source (src) of the iframe that contains the actual data
 soup = BeautifulSoup(r.text, 'html.parser')
@@ -58,7 +58,7 @@ park_visits_iframe = soup.find('iframe').attrs['src']
 
 # Make a second call to the iframe's src URL to get the actual data
 park_visits_request = park_visits_domain + park_visits_iframe
-r = http.get(park_visits_request, headers=headers, timeout=5)
+r = http.get(park_visits_request, headers=headers, timeout=5, verify=False)
 
 # Use pandas to read in the html and find the target table
 dfs = pd.read_html(r.text, match="Year", skiprows=1)
